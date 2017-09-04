@@ -52,7 +52,12 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if s =~ /^(1|0)+$/ then
+    int = s.to_i(2)
+    return int % 4 == 0
+  end
+  
+  return false
 end
 
 # Part 3
