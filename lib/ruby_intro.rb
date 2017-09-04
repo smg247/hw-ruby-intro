@@ -63,5 +63,20 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  def initialize(isbn, price)
+    if isbn.size == 0 or price <= 0 then
+      raise ArgumentError.new("Invalid ISBN or price")
+    end
+
+    @isbn = isbn
+    @price = price
+  end
+  
+  attr_accessor :price
+  attr_accessor :isbn
+  
+  def price_as_string
+    return "$#{sprintf('%.2f', @price)}"
+  end
+  
 end
